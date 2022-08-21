@@ -57,31 +57,28 @@ const PickMenu = ({
           Picks={Picks}
         />
       </div>
-      <div className="flex flex-col bg-white20 w-[95%] mx-auto rounded-[10px] p-4 h-fit mt-4">
-        <div className="flex flex-row ">
-          <h1 className="text-c1 text-4xl font-bold mr-4 whitespace-nowrap  ">
-            {"Week " + weekView}
+      <div className="flex flex-col bg-white20 w-[95%] mx-auto rounded-[10px] p-4 h-fit mt-4 items-center">
+        <h1 className="text-c1 text-5xl font-bold mr-4 whitespace-nowrap mb-1 w-[fit-content] ">
+          {"Week " + weekView}
+        </h1>
+        <div className="flex w-[fit-content] flex-row items-center mb-2 text-red-600 bg-red20 border-2 border-red-600 rounded-[5px] px-2">
+          <h1 className=" text-[10px] mr-2 whitespace-nowrap">Pick deadline</h1>
+          <h1 className=" rounded-[5px]  whitespace-nowrap text-[10px] px-1">
+            {date.toLocaleString("en-US", {
+              day: "numeric",
+              month: "numeric",
+              hour: "numeric",
+              minute: "numeric",
+            }) + " ET"}
           </h1>
-          <div className="flex flex-row items-center  ">
-            <h1 className="text-white text-[10px] mr-2 whitespace-nowrap">
-              Pick deadline
-            </h1>
-            <h1 className="text-red-600 bg-red20 border-2 border-red-600 rounded-[5px]  whitespace-nowrap text-[10px] px-1">
-              {date.toLocaleString("en-US", {
-                day: "numeric",
-                month: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-              }) + " ET"}
-            </h1>
-          </div>
         </div>
+
         {(() => {
           if (thisWeeksPrediction) {
             let Team = getTeamData(thisWeeksPrediction.selectedWinner);
 
             return (
-              <div className="flex flex-col ">
+              <div className="flex flex-col w-full">
                 <div className="text-c5 text-xl">Your Pick</div>
 
                 <div
@@ -108,7 +105,7 @@ const PickMenu = ({
           }
         })()}
 
-        <div className="flex flex-col mt-3 ">
+        <div className="flex flex-col mt-3 w-full">
           {matchUps.map((matchup, i) => {
             let gameDate = new Date(matchup.Date);
 
