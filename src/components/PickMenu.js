@@ -58,7 +58,7 @@ const PickMenu = ({
         />
       </div>
       <div className="flex flex-col bg-white20 w-[95%] mx-auto rounded-[10px] p-4 h-fit mt-4 items-center">
-        <h1 className="text-c1 text-5xl font-bold mr-4 whitespace-nowrap mb-1 w-[fit-content] ">
+        <h1 className="text-c1 text-6xl font-bold mr-4 whitespace-nowrap mb-1 w-[fit-content] ">
           {"Week " + weekView}
         </h1>
         <div className="flex w-[fit-content] flex-row items-center mb-2 text-red-600 bg-red20 border-2 border-red-600 rounded-[5px] px-2">
