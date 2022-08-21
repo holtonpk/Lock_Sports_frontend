@@ -5,6 +5,7 @@ import { getTeamData, getGameData } from "../logic.js";
 import Lottie from "react-lottie-player";
 
 import lock from "../assets/lottie/lock.json";
+
 const LockPreview = ({
   selectedGameKey,
   selectedPick,
@@ -16,6 +17,8 @@ const LockPreview = ({
   setSelectedPick,
   showLockAnimation,
 }) => {
+  console.log(Picks);
+
   const LockPicks = () => {
     Picks.map((pick) => {
       if (pick.week == weekView) {
