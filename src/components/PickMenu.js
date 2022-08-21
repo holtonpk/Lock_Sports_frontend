@@ -5,7 +5,7 @@ import TeamButton from "./TeamButton.js";
 import { getTeamData } from "../logic.js";
 import { FaLock } from "react-icons/fa";
 import WeekSelect from "./WeekSelect.js";
-import { BsCalendarFill } from "react-icons/bs";
+import { BsCalendarFill, BsFillHandIndexFill } from "react-icons/bs";
 const PickMenu = ({
   weekView,
   setWeekView,
@@ -43,10 +43,10 @@ const PickMenu = ({
     <>
       <div className="ml-4">
         <div className="flex flex-row items-center  mb-2">
-          <button className="rounded-full bg-blue-20 border-2 border-c1 relative p-3 mr-2">
-            <BsCalendarFill className="h-3 w-3 absolute fill-c1 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-          </button>
-          <h1 className="text-white font-thin text-xl   whitespace-nowrap">
+          <div className="rounded-full bg-blue-20 border-2 border-c1 relative p-4 mr-2">
+            <BsCalendarFill className="h-4 w-4 absolute fill-c1 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+          </div>
+          <h1 className="text-white font-thin text-2xl   whitespace-nowrap">
             Select a week
           </h1>
         </div>
@@ -61,7 +61,7 @@ const PickMenu = ({
         <h1 className="text-c1 text-6xl font-bold mr-4 whitespace-nowrap mb-1 w-[fit-content] ">
           {"Week " + weekView}
         </h1>
-        <div className="flex w-[fit-content] flex-row items-center mb-2 text-red-600 bg-red20 border-2 border-red-600 rounded-[5px] px-2">
+        <div className="flex w-[fit-content] flex-row items-center mb-2 text-c5 bg-c2_20 border-c5 border-2  rounded-[5px] px-2">
           <h1 className=" text-[10px] mr-2 whitespace-nowrap">Pick deadline</h1>
           <h1 className=" rounded-[5px]  whitespace-nowrap text-[10px] px-1">
             {date.toLocaleString("en-US", {
@@ -76,14 +76,13 @@ const PickMenu = ({
         {(() => {
           if (thisWeeksPrediction) {
             let Team = getTeamData(thisWeeksPrediction.selectedWinner);
-
             return (
               <div className="flex flex-col w-full">
-                <div className="text-c5 text-xl">Your Pick</div>
+                <div className="text-white text-xl">Your Pick</div>
 
                 <div
                   className={
-                    "flex flex-row items-center  rounded-[10px] w-full pl-5 py-2 mb-2 box-border bg-[#151515] border-c5 border-2"
+                    "flex flex-row items-center bg-c1  rounded-[10px] w-full pl-5 py-2 mb-2 box-border  "
                   }
                 >
                   <img
@@ -93,13 +92,24 @@ const PickMenu = ({
                   />
 
                   <div className="flex flex-row items-center">
-                    <h1 className="text-lg text-c5 mr-1 ">{Team.City}</h1>
-                    <h1 className="text-lg text-c5 mr-2 font-bold ">
+                    <h1 className="text-lg text-white mr-1 ">{Team.City}</h1>
+                    <h1 className="text-lg text-white mr-2 font-bold ">
                       {Team.Name}
                     </h1>
-                    <FaLock className="w-5 h-5 fill-c5" />
+                    <FaLock className="w-5 h-5 fill-white" />
                   </div>
                 </div>
+              </div>
+            );
+          } else {
+            return (
+              <div className="flex flex-row items-center  mb-2 w-full">
+                <div className="rounded-full bg-blue-20 border-2 border-c1 relative p-4 mr-2">
+                  <BsFillHandIndexFill className="h-4 w-4 absolute fill-c1 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+                </div>
+                <h1 className="text-white font-thin text-2xl   whitespace-nowrap">
+                  Pick a Team Below
+                </h1>
               </div>
             );
           }
@@ -112,7 +122,7 @@ const PickMenu = ({
             return (
               <div
                 key={i}
-                className="flex flex-col border-t-2 border-c1 w-full mx-auto"
+                className="flex flex-col border-b-2 pb-2 mb-2 border-c1 w-full mx-auto"
               >
                 <div className="flex flex-row">
                   <h1 className="text-lg text-c1 mr-1 font-bold">

@@ -46,17 +46,17 @@ const LockPreview = ({
     let Team = getTeamData(teamKey);
     let prediction = "Loser";
     let predictionStyle = "text-c5";
-    let predictionStyle2 = "text-c5 border-c5";
+    let predictionStyle2 = "text-c5 ";
     if (Team.Key == selectedPick) {
       prediction = "Winner";
       predictionStyle = "text-c1";
-      predictionStyle2 = "text-c5 border-c1";
+      predictionStyle2 = "text-c5 ";
     }
 
     return (
       <div
         className={
-          "flex flex-row items-center w-[90%] mx-auto  rounded-[10px]  py-2  box-border relative overflow-hidden mb-2 border-2  " +
+          "flex flex-row items-center w-[90%] mx-auto  rounded-[10px]  py-2  box-border relative overflow-hidden mb-2   " +
           predictionStyle2
         }
       >
@@ -98,7 +98,7 @@ const LockPreview = ({
                 className="fixed bg-back60 w-full bottom-0 h-full z-40 rounded-t-[20px] "
               ></button>
 
-              <div className="fixed bg-gray-700 w-full bottom-0  z-50 rounded-t-[20px] slide-in-bottom flex flex-col justify-end py-4">
+              <div className="fixed bg-white w-full bottom-0  z-50 rounded-t-[20px] slide-in-bottom flex flex-col justify-end py-4">
                 <div className="flex flex-col  items-left">
                   <TeamView teamKey={Matchup.HomeTeam} />
                   <TeamView teamKey={Matchup.AwayTeam} />

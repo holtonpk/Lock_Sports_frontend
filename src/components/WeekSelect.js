@@ -25,12 +25,12 @@ const WeekSelect = ({ setWeekView, weekView, Picks }) => {
                 key={i}
                 onClick={() => setWeekView(week.Week)}
                 className={
-                  "p-3 flex flex-col text-center relative rounded-full h-[40px] w-[40px] items-center overflow-hidden " +
+                  "p-3 flex flex-col text-center relative rounded-full h-[50px] w-[50px] items-center overflow-hidden " +
                   back
                 }
               >
-                <FaLock className="h-6 w-6 fill-c1_20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                <h1 className="text-xl text-white font- my-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <FaLock className="h-9 w-9 fill-c1_20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                <h1 className="text-3xl text-white font- my-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   {week.Week}
                 </h1>
               </button>
@@ -44,11 +44,11 @@ const WeekSelect = ({ setWeekView, weekView, Picks }) => {
               key={i}
               onClick={() => setWeekView(week.Week)}
               className={
-                "p-3 flex flex-col text-center  relative rounded-full h-[40px] w-[40px] items-center " +
+                "p-3 flex flex-col text-center  relative rounded-full h-[50px] w-[50px] items-center " +
                 back
               }
             >
-              <h1 className="text-xl text-white my-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <h1 className="text-3xl text-white my-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 {week.Week}
               </h1>
             </button>
