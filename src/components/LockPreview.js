@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { BsLockFill } from "react-icons/bs";
 import teamData2 from "../assets/data/teamData2.json";
 import { getTeamData, getGameData } from "../logic.js";
+import Lottie from "react-lottie-player";
 
+import lock from "../assets/lottie/lock.json";
 const LockPreview = ({
   selectedGameKey,
   selectedPick,
@@ -12,6 +14,7 @@ const LockPreview = ({
   Picks,
   setPicks,
   setSelectedPick,
+  showLockAnimation,
 }) => {
   const LockPicks = () => {
     Picks.map((pick) => {
@@ -28,6 +31,16 @@ const LockPreview = ({
       ]);
     });
   };
+  const lockAnimation = () => {
+    document.getElementById("lockAnimation").style.display = "block";
+    showLockAnimation(true);
+    setTimeout(() => {
+      const box = document.getElementById("lockAnimation");
+      showLockAnimation(false);
+      // 👇️ removes element from DOM
+      box.style.display = "none";
+    }, 2500);
+  };
 
   const TeamView = ({ teamKey }) => {
     let Team = getTeamData(teamKey);
@@ -43,7 +56,7 @@ const LockPreview = ({
     return (
       <div
         className={
-          "flex flex-row items-center w-[90%] mx-auto  rounded-[10px]  py-2  box-border relative overflow-hidden mb-2 border-2 border-c1 " +
+          "flex flex-row items-center w-[90%] mx-auto  rounded-[10px]  py-2  box-border relative overflow-hidden mb-2 border-2  " +
           predictionStyle2
         }
       >
@@ -85,26 +98,33 @@ const LockPreview = ({
                 className="fixed bg-back60 w-full bottom-0 h-full z-40 rounded-t-[20px] "
               ></button>
 
-              <div className="fixed bg-white w-full bottom-0  z-50 rounded-t-[20px] slide-in-bottom flex flex-col justify-end py-4">
+              <div className="fixed bg-gray-700 w-full bottom-0  z-50 rounded-t-[20px] slide-in-bottom flex flex-col justify-end py-4">
                 <div className="flex flex-col  items-left">
                   <TeamView teamKey={Matchup.HomeTeam} />
                   <TeamView teamKey={Matchup.AwayTeam} />
                 </div>
                 <button
                   onClick={() => setShowMenu(false)}
-                  className="bg-c1 rounded-full p-2  w-[90%] mx-auto"
+                  className="bg-c3 rounded-full p-2  w-[90%] mx-auto"
                 >
                   <button
                     className="flex flex-row mx-auto w-fit items-center"
                     onClick={() => {
                       LockPicks();
                       setSelectedPick(undefined);
+                      lockAnimation();
                     }}
                   >
-                    <h1 className="text-white text-2xl font-bold mr-2">
+                    <h1 className="text-c1 text-2xl font-bold mr-2 mt-1">
                       Lock Pick
                     </h1>
-                    <BsLockFill className="h-6 w-6 fill-white" />
+                    {/* <BsLockFill className="h-6 w-6 fill-white" /> */}
+                    <Lottie
+                      loop
+                      animationData={lock}
+                      play
+                      style={{ width: 50, height: 50 }}
+                    />
                   </button>
                 </button>
               </div>

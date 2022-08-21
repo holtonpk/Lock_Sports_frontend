@@ -5,7 +5,8 @@ import WeekSelect from "../components/WeekSelect";
 import PickMenu from "../components/PickMenu";
 import LockPreview from "../components/LockPreview.js";
 import ProfileData from "../assets/data/ProfileData.json";
-const PoolPage = () => {
+
+const PoolPage = ({ showLockAnimation }) => {
   const pool = {
     Name: "OU Sig Ep Pool",
     Description:
@@ -19,11 +20,11 @@ const PoolPage = () => {
   const [selectedGameKey, setSelectedGameKey] = useState(undefined);
   const [selectedPick, setSelectedPick] = useState(undefined);
   const [Picks, setPicks] = useState(ProfileData.Picks);
-  console.log("picks", Picks);
 
   return (
     <div className="flex flex-col">
       <LockPreview
+        showLockAnimation={showLockAnimation}
         showMenu={showMenu}
         setShowMenu={setShowMenu}
         selectedGameKey={selectedGameKey}
