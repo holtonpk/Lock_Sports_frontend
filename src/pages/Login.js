@@ -5,6 +5,10 @@ import twitterImg from "../assets/twitter.png";
 import instagramImg from "../assets/instagram.png";
 import googleImg from "../assets/google.png";
 const Login = () => {
+  const Login = () => {
+    document.getElementById("");
+  };
+
   return (
     <div className="py-4 bg-[#151515]">
       <div className="flex flex-row mx-auto w-[fit-content]">
