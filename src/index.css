@@ -20,6 +20,12 @@
   display: none; /* Safari and Chrome */
 }
 
+.textarea {
+  border: none;
+  resize: none;
+  outline: none;
+}
+
 .backGrad1 {
   /* ff 3.6+ */
   background: -moz-linear-gradient(

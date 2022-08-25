@@ -12,6 +12,7 @@ module.exports = {
         c4: "#37B4C8",
         c5: "#E03AA0",
         white10: "rgba(255,255,255,.1)",
+        white05: "rgba(255,255,255,.05)",
         white2: "rgba(255,255,255,.2)",
         white5: "rgba(255,255,255,.3)",
         white20: "#1B1B1B",
