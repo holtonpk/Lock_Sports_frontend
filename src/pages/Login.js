@@ -1,12 +1,14 @@
 import React from "react";
 import loginHeader from "../assets/loginHeader.png";
+import lock from "../assets/lock.png";
+import stripes from "../assets/stripes.png";
 import { TextField } from "@mui/material";
 import twitterImg from "../assets/twitter.png";
 import instagramImg from "../assets/instagram.png";
 import googleImg from "../assets/google.png";
 const Login = () => {
   const Login = () => {
-    document.getElementById("");
+    document.getElementById("lockLogo").classList.add("swirl-out-fwd");
   };
 
   return (
@@ -15,7 +17,14 @@ const Login = () => {
         <h1 className="text-6xl font-bold text-white">Lock</h1>
         <h1 className="text-6xl font-thin text-white ">Sports</h1>
       </div>
-      <img src={loginHeader} />
+      <div className="relative my-12">
+        <img src={stripes} />
+        <img
+          id="lockLogo"
+          src={lock}
+          className="absolute h-40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 "
+        />
+      </div>
 
       <div className="flex flex-col mx-auto w-[90%]">
         <h2 className="mb-3 ml-2 text-xl font-thin text-white">Email</h2>
@@ -30,7 +39,10 @@ const Login = () => {
           className="h-10 px-3 mb-3 text-white rounded-xl bg-white05 textarea"
         />
 
-        <button className="bg-c1 w-full rounded-[10px] text-white font-bold text-xl my-8 py-2">
+        <button
+          onClick={Login}
+          className="bg-c1 w-full rounded-[10px] text-white font-bold text-xl my-8 py-2"
+        >
           Sign In
         </button>
 
