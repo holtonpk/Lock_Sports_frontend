@@ -42,11 +42,11 @@ const PickMenu = ({
   return (
     <>
       <div className="ml-4">
-        <div className="flex flex-row items-center  mb-2">
-          <div className="rounded-full bg-blue-20 border-2 border-c1 relative p-4 mr-2">
-            <BsCalendarFill className="h-4 w-4 absolute fill-c1 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <div className="flex flex-row items-center mb-2">
+          <div className="relative p-4 mr-2 border-2 rounded-full bg-blue-20 border-c1">
+            <BsCalendarFill className="absolute w-4 h-4 -translate-x-1/2 -translate-y-1/2 fill-c1 left-1/2 top-1/2" />
           </div>
-          <h1 className="text-white font-thin text-2xl   whitespace-nowrap">
+          <h1 className="text-2xl font-thin text-white whitespace-nowrap">
             Select a week
           </h1>
         </div>
@@ -58,9 +58,6 @@ const PickMenu = ({
         />
       </div>
       <div className="flex flex-col bg-white20 w-[95%] mx-auto rounded-[10px] p-4 h-fit mt-4 items-center">
-        <h1 className="text-c1 text-6xl font-bold mr-4 whitespace-nowrap mb-1 w-[fit-content] ">
-          {"Week " + weekView}
-        </h1>
         <div className="flex w-[fit-content] flex-row items-center mb-2 text-c5 bg-c2_20 border-c5 border-2  rounded-[5px] px-2">
           <h1 className=" text-[10px] mr-2 whitespace-nowrap">Pick deadline</h1>
           <h1 className=" rounded-[5px]  whitespace-nowrap text-[10px] px-1">
@@ -72,13 +69,16 @@ const PickMenu = ({
             }) + " ET"}
           </h1>
         </div>
+        <h1 className="text-c1 text-6xl font-bold mr-4 whitespace-nowrap mb-1 w-[fit-content] ">
+          {"Week " + weekView}
+        </h1>
 
         {(() => {
           if (thisWeeksPrediction) {
             let Team = getTeamData(thisWeeksPrediction.selectedWinner);
             return (
               <div className="flex flex-col w-full">
-                <div className="text-white text-xl">Your Pick</div>
+                <div className="text-xl text-white">Your Pick</div>
 
                 <div
                   className={
@@ -88,12 +88,12 @@ const PickMenu = ({
                   <img
                     src={Team.WikipediaLogoUrl}
                     alt="no logo"
-                    className="h-10 w-10 mr-4"
+                    className="w-10 h-10 mr-4"
                   />
 
                   <div className="flex flex-row items-center">
-                    <h1 className="text-lg text-white mr-1 ">{Team.City}</h1>
-                    <h1 className="text-lg text-white mr-2 font-bold ">
+                    <h1 className="mr-1 text-lg text-white ">{Team.City}</h1>
+                    <h1 className="mr-2 text-lg font-bold text-white ">
                       {Team.Name}
                     </h1>
                     <FaLock className="w-5 h-5 fill-white" />
@@ -103,11 +103,11 @@ const PickMenu = ({
             );
           } else {
             return (
-              <div className="flex flex-row items-center  mb-2 w-full">
-                <div className="rounded-full bg-blue-20 border-2 border-c1 relative p-4 mr-2">
-                  <BsFillHandIndexFill className="h-4 w-4 absolute fill-c1 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+              <div className="flex flex-row items-center w-full mb-2">
+                <div className="relative p-4 mr-2 border-2 rounded-full bg-blue-20 border-c1">
+                  <BsFillHandIndexFill className="absolute w-4 h-4 -translate-x-1/2 -translate-y-1/2 fill-c1 left-1/2 top-1/2" />
                 </div>
-                <h1 className="text-white font-thin text-2xl   whitespace-nowrap">
+                <h1 className="text-2xl font-thin text-white whitespace-nowrap">
                   Pick a Team Below
                 </h1>
               </div>
@@ -115,24 +115,24 @@ const PickMenu = ({
           }
         })()}
 
-        <div className="flex flex-col mt-3 w-full">
+        <div className="flex flex-col w-full mt-3">
           {matchUps.map((matchup, i) => {
             let gameDate = new Date(matchup.Date);
 
             return (
               <div
                 key={i}
-                className="flex flex-col border-b-2 pb-2 mb-2 border-c1 w-full mx-auto"
+                className="flex flex-col w-full pb-2 mx-auto mb-2 border-b-2 border-c1"
               >
                 <div className="flex flex-row">
-                  <h1 className="text-lg text-c1 mr-1 font-bold">
+                  <h1 className="mr-1 text-lg font-bold text-c1">
                     {gameDate
                       .toLocaleString("en-US", {
                         weekday: "short",
                       })
                       .replace(",", "")}
                   </h1>
-                  <h1 className="text-lg text-c1 mr-2">
+                  <h1 className="mr-2 text-lg text-c1">
                     {" "}
                     {(
                       gameDate.toLocaleString("en-US", {
