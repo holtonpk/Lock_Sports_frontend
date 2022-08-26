@@ -1,6 +1,6 @@
 import React from "react";
 import loginHeader from "../assets/loginHeader.png";
-import lock from "../assets/lock.png";
+import lock from "../assets/lock.svg";
 import lockSvg from "../assets/lock.svg";
 import stripesBig from "../assets/stripesBig.png";
 import stripes from "../assets/stripes.png";
@@ -22,11 +22,11 @@ const Login = () => {
         </h1>
 
         <div className="relative my-12 md:hidden">
-          <img src={stripes} className="w-full" />
+          <img src={stripes} className="w-full " />
           <img
             id="lockLogo"
             src={lock}
-            className="absolute h-40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 "
+            className="absolute h-40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 -rotate-[12deg]"
           />
         </div>
         <div className="flex flex-row mx-auto w-[fit-content] md:hidden mb-6">
@@ -87,17 +87,17 @@ const Login = () => {
           <a className="mx-auto font-bold text-c5 text-md">Sign Up</a>
         </div>
       </div>
-      <div className="relative right-0 hidden w-1/2 min-h-screen p-10 py-4 overflow-hidden bg-white md:block">
+      <div className="relative hidden w-1/2 min-h-screen p-10 py-4 overflow-hidden bg-white md:block ">
         <div className="flex flex-col items-center absolute top-[50%] z-10 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <img src={lockSvg} className="w-40 " />
           <div className="flex  flex-row mx-auto w-[fit-content] ">
-            <h1 className="font-bold text-7xl text-c3">Lock</h1>
-            <h1 className="font-thin text-7xl text-c3">Sports</h1>
+            <h1 className="font-bold text-8xl text-c3">Lock</h1>
+            <h1 className="font-thin text-8xl text-c3">Sports</h1>
           </div>
         </div>
         <img
           src={stripesBig}
-          className="w-[3000px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="w-[3100px] absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 "
         />
       </div>
     </div>
