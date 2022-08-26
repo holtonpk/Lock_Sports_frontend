@@ -13,11 +13,11 @@ const Login = () => {
 
   return (
     <div className="md:flex md:flex-row">
-      <div className="w-full min-h-screen py-4 bg-black md:bg-black md:w-3/5 md:p-10">
-        <h1 className="mx-auto text-4xl  font-extralight text-white w-[fit-content] md:block hidden mb-2">
+      <div className="w-full min-h-screen py-4 bg-black md:bg-black md:w-3/5 md:p-10 md:pt-32">
+        <h1 className="mx-auto text-5xl  font-extralight text-white w-[fit-content] md:block hidden mb-2">
           Welcome back
         </h1>
-        <h1 className="mx-auto text-xl  text-c1 w-[fit-content] md:block hidden mb-6">
+        <h1 className="mx-auto text-2xl  text-c1 w-[fit-content] md:block hidden mb-6">
           Let's start winning
         </h1>
 
