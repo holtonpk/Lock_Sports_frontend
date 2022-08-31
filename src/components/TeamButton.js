@@ -9,10 +9,15 @@ const TeamButton = ({
   setShowMenu,
   setSelectedGameKey,
   gameKey,
+  setShowPickPreview,
 }) => {
   let Team = getTeamData(teamKey);
   let styleText = "text-c1";
   let styleBg = " border-2 border-[#151515]";
+
+  const menuSlide = () => {
+    document.getElementById("pickMenu").classList.add("slide-in-right");
+  };
 
   if (teamKey == selectedPick) {
     styleText = "text-c2";
@@ -23,8 +28,11 @@ const TeamButton = ({
       <button
         onClick={() => (
           setSelectedPick(Team.Key),
-          setShowMenu(true),
-          setSelectedGameKey(gameKey)
+          // setShowMenu(true),
+          setSelectedGameKey(gameKey),
+          setShowPickPreview(false),
+          setShowPickPreview(true),
+          menuSlide()
         )}
         className={
           "flex flex-row items-center  rounded-[10px] w-full pl-5 py-2 mb-2 box-border bg-[#151515]" +
@@ -34,7 +42,7 @@ const TeamButton = ({
         <img
           src={Team.WikipediaLogoUrl}
           alt="no logo"
-          className="h-10 w-10 mr-4"
+          className="w-10 h-10 mr-4"
         />
 
         <div className="flex flex-row">

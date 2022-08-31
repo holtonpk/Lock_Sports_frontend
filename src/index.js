@@ -11,8 +11,8 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/Home" element={<Home />}></Route>
-      <Route path="/" element={<Login />}></Route>
-      <Route path="/PoolPage" element={<PoolPage />}></Route>
+      <Route path="/Login" element={<Login />}></Route>
+      <Route path="/" element={<PoolPage />}></Route>
     </Routes>
   </BrowserRouter>
 );

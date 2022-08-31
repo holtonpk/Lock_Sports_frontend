@@ -4,7 +4,7 @@ import { FaLock } from "react-icons/fa";
 const WeekSelect = ({ setWeekView, weekView, Picks }) => {
   return (
     <>
-      <div className="overflow-x-scroll noBar grid grid-flow-col gap-3">
+      <div className="grid grid-flow-col gap-3 overflow-x-scroll noBar">
         {nflTimeFrames.map((week, i) => {
           let back = "bg-white20 ";
           let selected = false;
@@ -29,8 +29,8 @@ const WeekSelect = ({ setWeekView, weekView, Picks }) => {
                   back
                 }
               >
-                <FaLock className="h-9 w-9 fill-c1_20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                <h1 className="text-3xl text-white font- my-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <FaLock className="absolute -translate-x-1/2 -translate-y-1/2 h-9 w-9 fill-c1_20 top-1/2 left-1/2" />
+                <h1 className="absolute my-auto text-3xl text-white -translate-x-1/2 -translate-y-1/2 font- top-1/2 left-1/2">
                   {week.Week}
                 </h1>
               </button>
@@ -44,11 +44,11 @@ const WeekSelect = ({ setWeekView, weekView, Picks }) => {
               key={i}
               onClick={() => setWeekView(week.Week)}
               className={
-                "p-3 flex flex-col text-center  relative rounded-full h-[50px] w-[50px] items-center " +
+                "p-3 flex flex-col text-center  relative rounded-full h-[50px] w-[50px] items-center hover:bg-c5_20 " +
                 back
               }
             >
-              <h1 className="text-3xl text-white my-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <h1 className="absolute my-auto text-3xl text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                 {week.Week}
               </h1>
             </button>

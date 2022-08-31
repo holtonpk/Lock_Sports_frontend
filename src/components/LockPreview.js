@@ -63,7 +63,7 @@ const LockPreview = ({
           predictionStyle2
         }
       >
-        <div className="w-full h-full bg-back60 absolute"></div>
+        <div className="absolute w-full h-full bg-back60"></div>
         <h1
           className={
             "text-2xl font-bold  mr-3 absolute top-1/2 z-70 left-1/2 -translate-x-1/2 -translate-y-1/2 " +
@@ -75,12 +75,12 @@ const LockPreview = ({
         <img
           src={Team.WikipediaLogoUrl}
           alt="no logo"
-          className="h-10 w-16 mr-4 ml-3"
+          className="w-16 h-10 ml-3 mr-4"
         />
 
         <div className="flex flex-row">
-          <h1 className="text-lg text-c1 mr-1 ">{Team.City}</h1>
-          <h1 className="text-lg text-c1 mr-2 font-bold ">{Team.Name}</h1>
+          <h1 className="mr-1 text-lg text-c1 ">{Team.City}</h1>
+          <h1 className="mr-2 text-lg font-bold text-c1 ">{Team.Name}</h1>
         </div>
       </div>
     );
@@ -101,8 +101,8 @@ const LockPreview = ({
                 className="fixed bg-back60 w-full bottom-0 h-full z-40 rounded-t-[20px] "
               ></button>
 
-              <div className="fixed bg-white w-full bottom-0  z-50 rounded-t-[20px] slide-in-bottom flex flex-col justify-end py-4">
-                <div className="flex flex-col  items-left">
+              <div className="fixed bg-white w-full bottom-0  left-0 z-50 rounded-t-[20px] flex flex-col justify-end py-4 scale-up-center">
+                <div className="flex flex-col items-left">
                   <TeamView teamKey={Matchup.HomeTeam} />
                   <TeamView teamKey={Matchup.AwayTeam} />
                 </div>
@@ -111,17 +111,17 @@ const LockPreview = ({
                   className="bg-c3 rounded-full p-2  w-[90%] mx-auto"
                 >
                   <button
-                    className="flex flex-row mx-auto w-fit items-center"
+                    className="flex flex-row items-center mx-auto w-fit"
                     onClick={() => {
                       LockPicks();
                       setSelectedPick(undefined);
                       lockAnimation();
                     }}
                   >
-                    <h1 className="text-c1 text-2xl font-bold mr-2 mt-1">
+                    {/* <h1 className="mt-1 mr-2 text-2xl font-bold text-c1">
                       Lock Pick
-                    </h1>
-                    {/* <BsLockFill className="h-6 w-6 fill-white" /> */}
+                    </h1> */}
+
                     <Lottie
                       loop
                       animationData={lock}
