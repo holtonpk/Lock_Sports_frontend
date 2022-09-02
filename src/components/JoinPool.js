@@ -9,28 +9,34 @@ const JoinPool = () => {
         to={"/Pool?id=" + pool.id}
         className="bg-white05 p-4 w-full rounded-[20px] flex flex-col sm:flex-row justify-between mb-4 hover:bg-white10 items-center"
       >
-        <div className="flex flex-col items-center mr-3 ">
-          <h1 className="mr-4 text-xl font-bold text-white md:text-3xl sm:text-2xl">
-            {pool.Name}
-          </h1>
-          <div className="flex flex-row justify-start md:mt-2 w-fit">
-            <div className="flex flex-row pr-1 mr-1 border-r-[1px] border-white md:pr-3 md:mr-3 w-fit ">
-              <h1 className="mr-1 text-[10px] md:text-sm font-thin text-white">
-                Deadline:
-              </h1>
-              <h1 className="text-[10px] md:text-sm text-c1">
-                {pool.Deadline}
-              </h1>
-            </div>
-            <div className="flex flex-row">
-              <h1 className="mr-1 text-[10px] md:text-sm font-thin text-white underline whitespace-nowrap">
-                Rules and Payout
-              </h1>
+        <div className="flex flex-row items-center gap-3">
+          <div className="flex flex-col items-start">
+            <h1 className="text-sm font-bold text-white sm:text-2xl">
+              {pool.Name}
+            </h1>
+            <div className="flex flex-row justify-start md:mt-2 w-fit">
+              <div className="flex flex-row pr-1 mr-1 border-r-[1px] border-white md:pr-3 md:mr-3 w-fit ">
+                <h1 className="mr-1 text-[10px] md:text-sm font-thin text-white">
+                  Deadline:
+                </h1>
+                <h1 className="text-[10px] md:text-sm text-c1">
+                  {pool.Deadline}
+                </h1>
+              </div>
+              <div className="flex flex-row">
+                <h1 className="mr-1 text-[10px] md:text-sm font-thin text-white underline whitespace-nowrap">
+                  Rules and Payout
+                </h1>
+              </div>
             </div>
           </div>
+
+          <div className="p-3 text-c1 border-c1 border-[1px] bg-c1_20 rounded-[10px] text-sm">
+            Join Now
+          </div>
         </div>
-        <div className="flex flex-row justify-between w-[90%] sm:w-[50%] md:mt-4 mt-2">
-          <div className="flex flex-col">
+        <div className=" flex-row justify-between w-[90%] sm:w-[50%] md:mt-4 mt-2 flex">
+          <div className="flex flex-col ">
             <h1 className="text-lg sm:text-xl whitespace-nowrap text-c5">
               {pool.Pot}
             </h1>

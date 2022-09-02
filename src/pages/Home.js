@@ -38,7 +38,7 @@ const Home = () => {
         </div>
         <div className="flex flex-col justify-between ">
           <div className="md:w-[60%] w-[90%] mt-6 mx-auto flex flex-row h-36 bg-white05 rounded-[10px] p-4 relative  items-center">
-            <h1 className="w-1/2 text-xl font-bold text-white ">
+            <h1 className="w-1/2 text-xl font-bold text-white md:text-3xl ">
               Climb the leaderboard and win cash prizes!
             </h1>
             <img
