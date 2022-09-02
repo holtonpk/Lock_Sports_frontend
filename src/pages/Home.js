@@ -37,14 +37,14 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-col justify-between ">
-          <div className="w-[80%] mx-auto flex flex-row h-40 bg-white05 rounded-[10px] p-4 relative mb-4 items-center">
-            <h1 className="w-1/2 text-2xl font-bold text-white ">
+          <div className="md:w-[60%] w-[90%] mt-6 mx-auto flex flex-row h-36 bg-white05 rounded-[10px] p-4 relative mb-4 items-center">
+            <h1 className="w-1/2 text-xl font-bold text-white ">
               Climb the leaderboard and win cash prizes!
             </h1>
             <img
               src={heroImg}
               alt="img"
-              className="absolute w-[70%] left-[70%] -translate-x-1/2 bottom-0"
+              className="absolute w-[70%] left-[70%] -translate-x-1/2 bottom-0 md:w-[300px]"
             />
           </div>
 
