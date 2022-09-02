@@ -66,7 +66,7 @@ const Pool = () => {
        */}
 
       <Navbar />
-      <div className="w-[90%]  rounded-[20px] relative mx-auto pt-4 mt-6 z-40 max-w-[1700px] bg-c3 mb-10 slide-in-bottom">
+      <div className="w-[90%]  rounded-[20px] relative mx-auto pt-4 mt-6 z-40 max-w-[1700px] bg-c3 mb-10 ">
         <div className="flex flex-row items-center justify-between ">
           <Link to="/Home">
             <IoIosArrowRoundBack className="top-0 z-50 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
