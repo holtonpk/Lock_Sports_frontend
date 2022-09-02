@@ -15,7 +15,7 @@ const JoinPool = () => {
               {pool.Name}
             </h1>
             <div className="flex flex-row justify-start md:mt-2 w-fit">
-              <div className="flex flex-row pr-1 mr-1 border-r-[1px] border-white md:pr-3 md:mr-3 w-fit ">
+              <div className="flex flex-row pr-1 mr-1 md:pr-3 md:mr-3 w-fit ">
                 <h1 className="mr-1 text-[10px] md:text-sm font-thin text-white">
                   Deadline:
                 </h1>

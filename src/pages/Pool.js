@@ -71,11 +71,11 @@ const Pool = () => {
           <IoIosArrowRoundBack className="absolute z-50 top-2 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
         </Link>
 
-        <div className=" rounded-[10px]  relative mx-auto  p-5 mb-3 bg-white02">
+        <div className=" rounded-t-[10px]  relative mx-auto  p-3 mb-3 bg-white02 flex flex-col items-center">
           <h1 className="mx-auto text-4xl font-bold text-white md:text-5xl w-fit whitespace-nowrap">
             {pool.Name}
           </h1>
-          <div className="flex md:flex-row mx-auto flex-col flex-start gap-4 w-fit md:items-center justify-between  mt-2 md:mx-auto   p-4 rounded-[10px]">
+          <div className="flex md:flex-row mx-auto flex-col flex-start gap-4 w-fit md:items-center justify-between  mt-2 md:mx-auto   rounded-[10px]">
             <div className="flex flex-row items-center md:flex-col w-fit">
               <div className="flex flex-row items-center mr-2">
                 <MdOutlineAttachMoney className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
