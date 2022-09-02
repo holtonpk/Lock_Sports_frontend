@@ -8,6 +8,7 @@ import { BsFillCalendarFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 import logo from "../assets/logo.png";
+import heroImg from "../assets/betting-app.svg";
 import { AiFillHome } from "react-icons/ai";
 import profile from "../assets/profile.png";
 import Notifications from "../components/Notifications.js";
@@ -36,6 +37,17 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-col justify-between ">
+          <div className="w-[80%] mx-auto flex flex-row h-40 bg-white05 rounded-[10px] p-4 relative mb-4 items-center">
+            <h1 className="w-1/2 text-2xl font-bold text-white ">
+              Climb the leaderboard and win cash prizes!
+            </h1>
+            <img
+              src={heroImg}
+              alt="img"
+              className="absolute w-[70%] left-[70%] -translate-x-1/2 bottom-0"
+            />
+          </div>
+
           <div className="flex flex-col items-center justify-between w-full gap-4 mb-6 md:flex-row">
             <AccountBalance />
             <Notifications />
