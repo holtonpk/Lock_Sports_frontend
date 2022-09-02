@@ -66,53 +66,48 @@ const Pool = () => {
        */}
 
       <Navbar />
-      <div className="w-[90%]  rounded-[20px] relative mx-auto pt-4 mt-6 z-40 max-w-[1700px] bg-c3 mb-10 ">
-        <div className="flex flex-row items-center justify-between ">
-          <Link to="/Home">
-            <IoIosArrowRoundBack className="top-0 z-50 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
-          </Link>
-          <h1 className="mx-auto text-3xl font-bold text-white md:text-5xl w-fit whitespace-nowrap">
+      <div className="w-[90%]  rounded-[20px] relative mx-auto mt-6 z-40 max-w-[1700px] bg-c3 mb-10 ">
+        <Link to="/Home">
+          <IoIosArrowRoundBack className="absolute z-50 top-2 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
+        </Link>
+
+        <div className=" rounded-[10px]  relative mx-auto  p-5 mb-3 bg-white02">
+          <h1 className="mx-auto text-4xl font-bold text-white md:text-5xl w-fit whitespace-nowrap">
             {pool.Name}
           </h1>
-        </div>
-        <div className="w-full mx-auto">
-          <div className=" rounded-[10px]  relative mx-auto  p-5 mb-3 ">
-            {/* <BsThreeDotsVertical className="absolute float-right w-6 h-6 left-[90%] fill-white" /> */}
-
-            <div className="flex md:flex-row mx-auto flex-col flex-start gap-4 w-fit md:items-center justify-between  mt-2 md:mx-auto  bg-white05 p-4 rounded-[10px]">
-              <div className="flex flex-row items-center md:flex-col w-fit">
-                <div className="flex flex-row items-center mr-2">
-                  <MdOutlineAttachMoney className="w-8 h-8 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
-                  <h2 className="text-2xl text-left text-white md:text-2xl whitespace-nowrap">
-                    Pot Value:
-                  </h2>
-                </div>
-                <h2 className="text-2xl font-bold text-left md:text-2xl text-c5">
-                  {pool.Pot}
+          <div className="flex md:flex-row mx-auto flex-col flex-start gap-4 w-fit md:items-center justify-between  mt-2 md:mx-auto   p-4 rounded-[10px]">
+            <div className="flex flex-row items-center md:flex-col w-fit">
+              <div className="flex flex-row items-center mr-2">
+                <MdOutlineAttachMoney className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
+                <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
+                  Pot Value:
                 </h2>
               </div>
-              <div className="flex flex-row items-center md:mt-0 md:flex-col w-fit">
-                <div className="flex flex-row items-center mr-2">
-                  <BsFillPeopleFill className="w-8 h-8 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
-                  <h2 className="text-2xl text-left text-white md:text-2xl whitespace-nowrap">
-                    Total Players:
-                  </h2>
-                </div>
-                <h2 className="text-2xl font-bold text-left md:text-2xl text-c5">
-                  {pool.Payers}
+              <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
+                {pool.Pot}
+              </h2>
+            </div>
+            <div className="flex flex-row items-center md:mt-0 md:flex-col w-fit">
+              <div className="flex flex-row items-center mr-2">
+                <BsFillPeopleFill className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
+                <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
+                  Total Players:
                 </h2>
               </div>
-              <div className="flex flex-row items-center md:flex-col w-fit">
-                <div className="flex flex-row items-center mr-2">
-                  <BsFillPersonFill className="w-8 h-8 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
-                  <h2 className="text-2xl text-left text-white md:text-2xl whitespace-nowrap">
-                    Your Status:
-                  </h2>
-                </div>
-                <h2 className="text-2xl font-bold text-left md:text-2xl text-c5">
-                  {pool.Status}
+              <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
+                {pool.Payers}
+              </h2>
+            </div>
+            <div className="flex flex-row items-center md:flex-col w-fit">
+              <div className="flex flex-row items-center mr-2">
+                <BsFillPersonFill className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
+                <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
+                  Your Status:
                 </h2>
               </div>
+              <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
+                {pool.Status}
+              </h2>
             </div>
           </div>
         </div>
