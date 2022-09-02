@@ -4,10 +4,12 @@ import lock from "../assets/lock.svg";
 import lockSvg from "../assets/lock.svg";
 import stripesBig from "../assets/stripesBig.png";
 import stripes from "../assets/stripes.png";
-import { TextField } from "@mui/material";
+
 import twitterImg from "../assets/twitter.png";
 import instagramImg from "../assets/instagram.png";
 import googleImg from "../assets/google.png";
+import { Link } from "react-router-dom";
+
 const Login = () => {
   const Login = () => {};
 
@@ -47,12 +49,12 @@ const Login = () => {
             className="h-10 px-3 mb-3 text-white rounded-xl bg-white05 textarea"
           />
 
-          <button
-            onClick={Login}
-            className="bg-c1 w-full rounded-[10px] text-white font-bold text-xl my-8 py-2"
+          <Link
+            to="/Home"
+            className="bg-c1 w-full text-center rounded-[10px] text-white font-bold text-xl my-8 py-2"
           >
             Sign In
-          </button>
+          </Link>
 
           <div className="relative w-full h-10">
             <div className="absolute w-full -translate-x-1/2 -translate-y-1/2 border-t-2 border-white5 top-1/2 left-1/2"></div>

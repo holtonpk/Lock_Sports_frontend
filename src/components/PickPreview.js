@@ -26,9 +26,8 @@ const PickPreview = ({
       text = "Winner";
       textStyle = "text-c1";
     }
-    console.log("Team", Team);
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col ">
         <h2 className={"mx-auto text-4xl font-bold w-fit " + textStyle}>
           {text}
         </h2>
@@ -85,12 +84,12 @@ const PickPreview = ({
     <>
       <div
         id="lockAnimation"
-        className="left-1/2 top-1/2 2  w-[350px] h-[350px]  hidden fixed -translate-x-1/2 -translate-y-1/2"
+        className="left-1/2 top-1/2 2  w-[350px] h-[350px] z-50  hidden fixed -translate-x-1/2 -translate-y-1/2 "
       >
         {(() => {
           if (lockAnimation) {
             return (
-              <div className="w-[350px] h-[350px] top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2">
+              <div className="w-[350px] h-[350px] ">
                 <Lottie
                   loop
                   animationData={lock3}
@@ -108,11 +107,11 @@ const PickPreview = ({
             <>
               <button
                 onClick={() => setShowPickPreview(false)}
-                className="absolute w-full h-full bg-back60"
+                className="fixed z-50 w-screen h-screen bg-back60 "
               ></button>
               <div
                 id="pickMenu"
-                className="fixed left-1/2 bg-white flex flex-col  top-1/2 z-60 rounded-[20px]  p-4 -translate-x-1/2 -translate-y-1/2 fade-in"
+                className="fixed w-full md:w-fit md:h-fit left-0 md:left-1/2 bg-white flex flex-col bottom-0 md:top-1/2 z-50 md:rounded-[20px] rounded-t-[20px]  p-4 md:-translate-x-1/2 md:-translate-y-1/2  pickAnimation"
               >
                 {/* <h1 className="w-[90%] mx-auto text-3xl font-bold border-b-2 border-c1 text-c1 mb-3">
                   Your Pick
@@ -128,7 +127,7 @@ const PickPreview = ({
                     setShowPickPreview(false);
                     LockAnimation();
 
-                    //   setSelectedPick(undefined);
+                    setSelectedPick(undefined);
                   }}
                 >
                   <h1 className="mx-auto text-4xl font-bold text-white whitespace-nowrap">

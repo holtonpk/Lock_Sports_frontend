@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "Name": "OU Sig Ep Pool",
+    "Payers": 20,
+    "Pot": "2k",
+    "Entry": "$50",
+    "Status": "Alive",
+    "Deadline": "9/11"
+  },
+  {
+    "id": 2,
+    "Name": "Family Pool",
+    "Payers": 5,
+    "Pot": "$500",
+    "Entry": "$50",
+    "Status": "Dead",
+    "Deadline": "9/11"
+  },
+  {
+    "id": 3,
+    "Name": "Work Pool",
+    "Payers": 5,
+
+    "Pot": "10k",
+    "Entry": "$50",
+    "Status": "Dead",
+    "Deadline": "9/11"
+  },
+  {
+    "id": 4,
+    "Name": "NFl Pick 'EM Pool",
+    "Payers": 5,
+    "Pot": "$100,000",
+    "Entry": "$50",
+    "Status": "Not Joined",
+    "Deadline": "9/11"
+  },
+  {
+    "id": 5,
+    "Name": "NFl Pick 'EM Pool 2",
+    "Payers": 5,
+    "Pot": "$100,000",
+    "Entry": "$150",
+    "Status": "Not Joined",
+    "Deadline": "9/11"
+  },
+  {
+    "id": 6,
+    "Name": "NFl Pick 'EM Pool 3",
+    "Payers": 5,
+    "Pot": "$100,000",
+    "Entry": "$10",
+    "Status": "Not Joined",
+    "Deadline": "9/11"
+  }
+]
