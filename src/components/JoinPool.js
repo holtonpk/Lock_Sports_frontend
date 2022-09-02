@@ -9,9 +9,9 @@ const JoinPool = () => {
         to={"/Pool?id=" + pool.id}
         className="bg-white05 p-4 w-full rounded-[20px] flex flex-col sm:flex-row justify-between mb-4 hover:bg-white10 items-center"
       >
-        <div className="flex flex-row items-center gap-3">
+        <div className="flex flex-row items-center justify-between w-[90%] gap-3">
           <div className="flex flex-col items-start">
-            <h1 className="text-sm font-bold text-white sm:text-2xl">
+            <h1 className="text-lg font-bold text-white sm:text-2xl">
               {pool.Name}
             </h1>
             <div className="flex flex-row justify-start md:mt-2 w-fit">
@@ -31,9 +31,9 @@ const JoinPool = () => {
             </div>
           </div>
 
-          <div className="p-3 text-c1 border-c1 border-[1px] bg-c1_20 rounded-[10px] text-sm">
+          {/* <div className="p-2 text-c1 border-c1 border-[1px] bg-c1_20 rounded-[10px] text-[10px]">
             Join Now
-          </div>
+          </div> */}
         </div>
         <div className=" flex-row justify-between w-[90%] sm:w-[50%] md:mt-4 mt-2 flex">
           <div className="flex flex-col ">
