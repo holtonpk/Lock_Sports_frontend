@@ -7,19 +7,19 @@ import { Carousel } from "react-responsive-carousel";
 const Hero = () => {
   const Slide1 = () => {
     return (
-      <div className="md:w-full w-full mx-auto flex flex-row bg-white05 p-4 mb-0 rounded-[10px]  relative  items-center">
-        <div className="flex flex-col  w-[63%]">
-          <h1 className="md:w-[60%]   mb-2 text-xl text-left text-white md:text-3xl">
+      <div className="md:w-full w-full sm:w-fit mx-auto flex  flex-row bg-white05 p-4 mb-0 md:mb-10 rounded-[10px]  relative  items-center">
+        <div className="flex flex-col  w-[63%] md:w-[50%] ">
+          <h1 className="mb-2 text-xl text-left text-white md:text-3xl w-[70%]">
             App Coming Soon, Join the Waitlist
           </h1>
-          <button className="p-2 font-bold text-white bg-c1 rounded-[10px] w-fit text-sm ">
+          <button className="p-2 font-bold text-white bg-c1 rounded-[10px] w-fit text-sm md:text-xl">
             Join Waitlist
           </button>
         </div>
         <img
           src={mobile}
           alt="img"
-          className="absolute  left-[80%] -translate-x-1/2 top-1/2 -translate-y-1/2 bottom-0 md:w-[100px] md:h-[280px]  h-[160px] "
+          className="absolute  left-[80%] sm:left-[70%] md:left-[70%] -translate-x-1/2 top-1/2 -translate-y-1/2 bottom-0 md:w-[250px] md:h-[250px] h-[160px]  "
         />
       </div>
     );
