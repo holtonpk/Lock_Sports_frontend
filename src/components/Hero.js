@@ -1,6 +1,6 @@
 import React from "react";
 import heroImg from "../assets/betting-app.svg";
-import mobile from "../assets/mobile.svg";
+import mobile from "../assets/mobile.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
@@ -19,7 +19,7 @@ const Hero = () => {
         <img
           src={mobile}
           alt="img"
-          className="absolute  left-[80%] -translate-x-1/2 top-1/2 -translate-y-1/2 bottom-0 md:w-[100px] md:h-[280px]  h-[200px] "
+          className="absolute  left-[80%] -translate-x-1/2 top-1/2 -translate-y-1/2 bottom-0 md:w-[100px] md:h-[280px]  h-[180px] "
         />
       </div>
     );
