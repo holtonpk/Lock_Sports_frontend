@@ -35,7 +35,7 @@ const JoinPool = () => {
             Join Now
           </div> */}
         </div>
-        <div className=" flex-row justify-between w-[90%] sm:w-[50%] md:mt-4 mt-2 flex">
+        <div className=" flex-row justify-between w-[90%]  md:mt-4 mt-2 flex">
           <div className="flex flex-col ">
             <h1 className="text-lg sm:text-xl whitespace-nowrap text-c5">
               {pool.Pot}

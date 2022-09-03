@@ -4,7 +4,7 @@ const AccountBalance = () => {
   const [accountBalance, setAccountBalance] = useState("$5,000.00");
 
   return (
-    <div className="flex flex-col  w-[90%] md:w-[55%] ">
+    <div className="flex flex-col  w-[90%] md:w-[55%]">
       <div className="flex flex-row  p-4 xl:px-16 px-4 rounded-[20px]  bg-white05  w-[100%] max-w-[1000px] overflow-hidden relative items-center justify-between">
         <div className="flex flex-row xl:w-[90%] w-fit mx-auto sm:gap-10 gap-4 md:w-full md:gap-0 justify-between items-center xl:mx-auto ">
           <div className="flex  flex-col w-[50%]  ">

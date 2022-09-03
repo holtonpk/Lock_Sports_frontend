@@ -8,11 +8,11 @@ import { BsFillCalendarFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 import logo from "../assets/logo.png";
-import heroImg from "../assets/betting-app.svg";
 import { AiFillHome } from "react-icons/ai";
 import profile from "../assets/profile.png";
 import Notifications from "../components/Notifications.js";
 import Navbar from "../components/Navbar";
+import Hero from "../components/Hero.js";
 const Home = () => {
   const name = "Patrick";
   return (
@@ -36,22 +36,9 @@ const Home = () => {
             <img src={profile} alt="" className="w-10 h-10 md:w-14 md:h-14" />
           </div>
         </div>
+        <Hero />
+
         <div className="flex flex-col justify-between ">
-          <div className="md:w-[60%] w-[90%] mt-6 mx-auto flex flex-row h-36 bg-white05 rounded-[10px] p-4 relative  items-center">
-            <h1 className="w-1/2 text-xl font-bold text-white md:text-3xl ">
-              Climb the leaderboard and win cash prizes!
-            </h1>
-            <img
-              src={heroImg}
-              alt="img"
-              className="absolute w-[70%] left-[70%] -translate-x-1/2 bottom-0 md:w-[300px]"
-            />
-          </div>
-          <div className="flex flex-row gap-2 mx-auto my-3">
-            <div className="w-2 h-2 bg-white rounded-full"></div>
-            <div className="w-2 h-2 rounded-full bg-white2"></div>
-            <div className="w-2 h-2 rounded-full bg-white2"></div>
-          </div>
           <div className="flex flex-col items-center justify-between w-full gap-4 mb-6 md:flex-row">
             <AccountBalance />
             <Notifications />
