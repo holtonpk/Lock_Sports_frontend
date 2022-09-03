@@ -7,7 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 const Hero = () => {
   const Slide1 = () => {
     return (
-      <div className="md:w-full w-full mx-auto flex flex-row  mb-0 rounded-[10px] p-8 relative  items-center">
+      <div className="md:w-full w-full mx-auto flex flex-row  mb-0 rounded-[10px]  relative  items-center">
         <div className="flex flex-col  w-[60%]">
           <h1 className="md:w-[60%]   mb-2 text-xl text-left text-white md:text-3xl">
             App Coming Soon, Join the Waitlist
@@ -19,7 +19,7 @@ const Hero = () => {
         <img
           src={mobile}
           alt="img"
-          className="absolute  left-[80%] -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 bottom-0 md:w-[100px] md:h-[280px]  h-[200px] "
+          className="absolute  left-[80%] -translate-x-1/2 top-1/2 -translate-y-1/2 bottom-0 md:w-[100px] md:h-[280px]  h-[200px] "
         />
       </div>
     );
@@ -42,7 +42,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="md:w-[80%] w-full max-w-[600px] mx-auto overflow-hidden ">
+      <div className="md:w-[80%] w-[95%] max-w-[600px] mx-auto  mb-10 py-6">
         <Slide1 />
 
         {/* <Carousel
