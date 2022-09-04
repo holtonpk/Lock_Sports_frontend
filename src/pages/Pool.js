@@ -12,6 +12,7 @@ import stripes2 from "../assets/stripes3.svg";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import PickPreview from "../components/PickPreview";
 import {
   BsFillPeopleFill,
@@ -37,6 +38,7 @@ const Pool = () => {
   const [Picks, setPicks] = useState(ProfileData.Picks);
   const [lockAnimation, showLockAnimation] = useState(false);
   const [showPickPreview, setShowPickPreview] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   let query = useQuery();
   let pool = undefined;
@@ -67,49 +69,63 @@ const Pool = () => {
 
       <Navbar />
       <div className="w-[90%]  rounded-[20px] relative mx-auto mt-6 z-40 max-w-[1700px] bg-c3 mb-10 ">
-        <Link to="/Home">
+        {/* <Link to="/Home">
           <IoIosArrowRoundBack className="absolute z-50 top-2 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
-        </Link>
+        </Link> */}
 
-        <div className=" rounded-t-[10px]  relative mx-auto  p-3 mb-3 bg-white02 flex flex-col items-center">
-          <h1 className="mx-auto text-4xl font-bold text-white md:text-5xl w-fit whitespace-nowrap">
-            {pool.Name}
-          </h1>
-          <div className="flex md:flex-row mx-auto flex-col flex-start gap-4 w-fit md:items-center justify-between  mt-2 md:mx-auto   rounded-[10px]">
-            <div className="flex flex-row items-center md:flex-col w-fit">
-              <div className="flex flex-row items-center mr-2">
-                <MdOutlineAttachMoney className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
-                <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
-                  Pot Value:
-                </h2>
-              </div>
-              <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
-                {pool.Pot}
-              </h2>
-            </div>
-            <div className="flex flex-row items-center md:mt-0 md:flex-col w-fit">
-              <div className="flex flex-row items-center mr-2">
-                <BsFillPeopleFill className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
-                <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
-                  Total Players:
-                </h2>
-              </div>
-              <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
-                {pool.Payers}
-              </h2>
-            </div>
-            <div className="flex flex-row items-center md:flex-col w-fit">
-              <div className="flex flex-row items-center mr-2">
-                <BsFillPersonFill className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
-                <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
-                  Your Status:
-                </h2>
-              </div>
-              <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
-                {pool.Status}
-              </h2>
-            </div>
+        <div className=" rounded-t-[10px]  relative mx-auto mb-2  pt-3 pb-0  bg-white02 flex flex-col items-center">
+          <div className="flex flex-row items-center">
+            <h1 className="mx-auto mr-2 text-4xl font-bold text-white md:text-5xl w-fit whitespace-nowrap">
+              {pool.Name}
+            </h1>
+            <button
+              onClick={() => setShowDetails((showDetails) => !showDetails)}
+              className="relative"
+            >
+              <AiOutlineInfoCircle className="w-8 h-8 fill-c1" />
+            </button>
           </div>
+          {(() => {
+            if (showDetails) {
+              return (
+                <div className="top-0 z-50 flex-col justify-between w-full gap-6 p-4 mx-auto mt-3 md:flex-row bg-white05 flex-start md:items-center md:mx-auto ">
+                  <div className="flex flex-row items-center md:flex-col w-fit">
+                    <div className="flex flex-row items-center mr-2">
+                      <MdOutlineAttachMoney className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
+                      <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
+                        Pot Value:
+                      </h2>
+                    </div>
+                    <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
+                      {pool.Pot}
+                    </h2>
+                  </div>
+                  <div className="flex flex-row items-center md:mt-0 md:flex-col w-fit">
+                    <div className="flex flex-row items-center mr-2">
+                      <BsFillPeopleFill className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
+                      <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
+                        Total Players:
+                      </h2>
+                    </div>
+                    <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
+                      {pool.Payers}
+                    </h2>
+                  </div>
+                  <div className="flex flex-row items-center md:flex-col w-fit">
+                    <div className="flex flex-row items-center mr-2">
+                      <BsFillPersonFill className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
+                      <h2 className="text-xl text-left text-white md:text-2xl whitespace-nowrap">
+                        Your Status:
+                      </h2>
+                    </div>
+                    <h2 className="text-xl font-bold text-left md:text-2xl text-c5">
+                      {pool.Status}
+                    </h2>
+                  </div>
+                </div>
+              );
+            }
+          })()}
         </div>
 
         <div className="flex flex-col max-w-[2000px]">
