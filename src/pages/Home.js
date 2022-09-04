@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AccountBalance from "../components/AccountBalance";
 import PoolPreview from "../components/YourPools";
 import stripes2 from "../assets/stripes3.svg";
@@ -14,6 +14,10 @@ import Notifications from "../components/Notifications.js";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero.js";
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const name = "Patrick";
   return (
     <div className="bg-black homeGrid ">

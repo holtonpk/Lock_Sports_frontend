@@ -74,6 +74,9 @@ const Pool = () => {
       <Navbar />
       <div className="w-full">
         <div className=" rounded-t-[10px]  relative mx-auto mb-2  pt-3 pb-0   flex flex-col items-center ">
+          <Link to="/Home">
+            <IoIosArrowRoundBack className="absolute left-0 z-50 top-2 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
+          </Link>
           <div className="flex flex-row items-center">
             <h1 className="mx-auto mr-2 text-4xl font-bold text-white md:text-5xl w-fit whitespace-nowrap">
               {pool.Name}
@@ -128,10 +131,6 @@ const Pool = () => {
           })()}
         </div>
         <div className="w-[90%]  rounded-[20px] relative mx-auto mt-6 z-40 max-w-[1700px] bg-c3 mb-10 ">
-          {/* <Link to="/Home">
-          <IoIosArrowRoundBack className="absolute z-50 top-2 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
-        </Link> */}
-
           <PickMenu
             pool={pool}
             setShowPickPreview={setShowPickPreview}
