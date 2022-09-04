@@ -21,8 +21,6 @@ const YourPools = () => {
       <div className="flex flex-col justify-start relative w-[100%]  max-w-[1500px] overflow-scroll ">
         {pools.map((pool, i) => {
           if (pool.Status != "Not Joined") {
-            console.log("Pool", pool);
-
             return (
               <Link
                 key={i}

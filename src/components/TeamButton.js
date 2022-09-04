@@ -53,9 +53,7 @@ const TeamButton = ({
         </div>
       </button>
     );
-  } catch {
-    console.log(Team);
-  }
+  } catch {}
 };
 
 export default TeamButton;

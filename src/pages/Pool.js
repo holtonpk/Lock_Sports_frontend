@@ -46,7 +46,6 @@ const Pool = () => {
   pools.map((poolQ) => {
     if (poolQ.id == query.get("id")) {
       pool = poolQ;
-      console.log(pool);
     }
   });
 

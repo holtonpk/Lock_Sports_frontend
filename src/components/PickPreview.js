@@ -70,7 +70,7 @@ const PickPreview = ({
   };
   const LockAnimation = () => {
     const box = document.getElementById("lockAnimation");
-    console.log(box);
+
     box.style.display = "block";
     showLockAnimation(true);
     setTimeout(() => {
