@@ -130,7 +130,7 @@ const Pool = () => {
             }
           })()}
         </div>
-        <div className="w-[90%]  rounded-[20px] relative mx-auto mt-6 z-40 max-w-[1700px] bg-c3 mb-10 ">
+        <div className="w-[90%]  rounded-[20px] relative mx-auto mt-6 z-40 max-w-[1700px] bg-c3 mb-10 slide-in-bottom">
           <PickMenu
             pool={pool}
             setShowPickPreview={setShowPickPreview}

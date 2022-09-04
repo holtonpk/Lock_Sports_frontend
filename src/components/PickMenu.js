@@ -61,7 +61,7 @@ const PickMenu = ({
     }
   };
   return (
-    <div className="">
+    <>
       {(() => {
         if (pool.Status == "Not Joined") {
           return (
@@ -242,7 +242,7 @@ const PickMenu = ({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
