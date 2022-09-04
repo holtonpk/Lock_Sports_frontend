@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InfoBox from "../components/InfoBox";
 import SliderMenu from "../components/SliderMenu";
 import WeekSelect from "../components/WeekSelect";
@@ -49,6 +49,10 @@ const Pool = () => {
       console.log(pool);
     }
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="top-0 w-screen bg-black border-2 border-black homeGrid">
