@@ -94,7 +94,7 @@ const PickMenu = ({
           Picks={Picks}
         />
       </div>
-      <div className="flex flex-col    w-full    rounded-[10px]  h-fit mt-4 relative max-w-[1500px]">
+      <div className="flex flex-col    w-full    rounded-[10px]  h-fit mt-4 relative max-w-[1500px] bg-white02">
         <div className="flex flex-col items-center justify-between w-[90%] mx-auto lg:flex-row md:mb-4 ">
           <div className="flex flex-row items-center justify-between w-full">
             <button

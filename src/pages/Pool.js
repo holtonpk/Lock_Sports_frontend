@@ -128,37 +128,20 @@ const Pool = () => {
           <IoIosArrowRoundBack className="absolute z-50 top-2 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
         </Link> */}
 
-          <div className="flex flex-col max-w-[2000px]">
-            {/* <LockPreview
-            showLockAnimation={showLockAnimation}
-            showMenu={showMenu}
-            setShowMenu={setShowMenu}
+          <PickMenu
+            pool={pool}
+            setShowPickPreview={setShowPickPreview}
+            showPickPreview={showPickPreview}
+            Picks={Picks}
+            setSelectedGameKey={setSelectedGameKey}
             selectedGameKey={selectedGameKey}
             selectedPick={selectedPick}
-            setPicks={setPicks}
-            weekView={weekView}
-            Picks={Picks}
             setSelectedPick={setSelectedPick}
-          /> */}
-
-            {/* <h1 className="mx-auto my-4 text-4xl font-bold text-white">
-            Your Picks
-          </h1> */}
-            <PickMenu
-              pool={pool}
-              setShowPickPreview={setShowPickPreview}
-              showPickPreview={showPickPreview}
-              Picks={Picks}
-              setSelectedGameKey={setSelectedGameKey}
-              selectedGameKey={selectedGameKey}
-              selectedPick={selectedPick}
-              setSelectedPick={setSelectedPick}
-              weekView={weekView}
-              setWeekView={setWeekView}
-              setShowMenu={setShowMenu}
-              setPicks={setPicks}
-            />
-          </div>
+            weekView={weekView}
+            setWeekView={setWeekView}
+            setShowMenu={setShowMenu}
+            setPicks={setPicks}
+          />
         </div>
       </div>
     </div>
