@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import nflTimeFrames from "../assets/data/nflTimeFrames.json";
 import nflSchedule from "../assets/data/nflSchedule.json";
 import TeamButton from "./TeamButton.js";
@@ -44,6 +44,15 @@ const PickMenu = ({
   Picks.map((week) => {
     if (week.week == weekView) {
       thisWeeksPrediction = week;
+    }
+  });
+
+  useEffect(() => {
+    if (weekView == 1) {
+      document.getElementById("weekViewMinus").classList.add("invisible");
+    }
+    if (weekView == nflTimeFrames.length) {
+      document.getElementById("weekViewPlus").classList.add("invisible");
     }
   });
 
