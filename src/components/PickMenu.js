@@ -3,6 +3,7 @@ import nflTimeFrames from "../assets/data/nflTimeFrames.json";
 import nflSchedule from "../assets/data/nflSchedule.json";
 import TeamButton from "./TeamButton.js";
 import { getTeamData } from "../logic.js";
+import { BiRightArrow } from "react-icons/bi";
 import { FaLock } from "react-icons/fa";
 import WeekSelect from "./WeekSelect.js";
 import PickPreview from "./PickPreview.js";
@@ -46,8 +47,21 @@ const PickMenu = ({
     }
   });
 
+  const WeekSelector = (direction) => {
+    if (weekView + direction <= 1) {
+      setWeekView(1);
+      document.getElementById("weekViewMinus").classList.add("invisible");
+    } else if (weekView + direction >= nflTimeFrames.length) {
+      setWeekView(nflTimeFrames.length);
+      document.getElementById("weekViewPlus").classList.add("invisible");
+    } else {
+      setWeekView(weekView + direction);
+      document.getElementById("weekViewPlus").classList.remove("invisible");
+      document.getElementById("weekViewMinus").classList.remove("invisible");
+    }
+  };
   return (
-    <div>
+    <div className="">
       {(() => {
         if (pool.Status == "Not Joined") {
           return (
@@ -64,7 +78,7 @@ const PickMenu = ({
         }
       })()}
 
-      <div className="ml-4 max-w-[1500px]">
+      <div className="ml-4 max-w-[1500px] hidden md:block">
         <div className="flex flex-row items-center mb-4">
           <div className="relative p-4 mr-2 border-2 rounded-full bg-blue-20 border-c1">
             <BsCalendarFill className="absolute w-4 h-4 -translate-x-1/2 -translate-y-1/2 fill-c1 left-1/2 top-1/2" />
@@ -80,12 +94,27 @@ const PickMenu = ({
           Picks={Picks}
         />
       </div>
-      <div className="flex flex-col    w-full pt-4   rounded-[10px]  h-fit mt-4 relative max-w-[1500px]">
-        <div className="flex flex-col lg:flex-row items-center justify-between w-[fit-content] md:mb-4 mx-auto">
-          <h1 className="text-c1 text-7xl font-bold mr-4 whitespace-nowrap mb-1 w-[fit-content] ">
-            {"Week " + weekView}
-          </h1>
-
+      <div className="flex flex-col    w-full    rounded-[10px]  h-fit mt-4 relative max-w-[1500px]">
+        <div className="flex flex-col items-center justify-between w-[90%] mx-auto lg:flex-row md:mb-4 ">
+          <div className="flex flex-row items-center justify-between w-full">
+            <button
+              className="block md:hidden"
+              id="weekViewMinus"
+              onClick={() => WeekSelector(-1)}
+            >
+              <BiRightArrow className="w-6 h-6 rotate-180 fill-c5" />
+            </button>
+            <h1 className="text-c1 text-7xl font-bold mr-4 whitespace-nowrap mb-1 w-[fit-content]  ">
+              {"Week " + weekView}
+            </h1>
+            <button
+              className="block md:hidden"
+              id="weekViewPlus"
+              onClick={() => WeekSelector(1)}
+            >
+              <BiRightArrow className="w-6 h-6 fill-c5" />
+            </button>
+          </div>
           {(() => {
             if (thisWeeksPrediction) {
               let Team = getTeamData(thisWeeksPrediction.selectedWinner);

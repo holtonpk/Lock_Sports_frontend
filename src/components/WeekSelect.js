@@ -4,7 +4,7 @@ import { FaLock } from "react-icons/fa";
 const WeekSelect = ({ setWeekView, weekView, Picks }) => {
   return (
     <>
-      <div className="grid grid-flow-col gap-3 overflow-x-scroll noBar">
+      <div className="grid grid-flow-col gap-3 mx-auto overflow-x-scroll noBar ">
         {nflTimeFrames.map((week, i) => {
           let back = "bg-white20 ";
           let selected = false;
@@ -25,7 +25,7 @@ const WeekSelect = ({ setWeekView, weekView, Picks }) => {
                 key={i}
                 onClick={() => setWeekView(week.Week)}
                 className={
-                  "p-3 flex flex-col text-center relative rounded-full h-[50px] w-[50px] items-center overflow-hidden " +
+                  "p-3  flex flex-col text-center relative rounded-full h-[50px] w-[50px] items-center overflow-hidden " +
                   back
                 }
               >
@@ -44,7 +44,7 @@ const WeekSelect = ({ setWeekView, weekView, Picks }) => {
               key={i}
               onClick={() => setWeekView(week.Week)}
               className={
-                "p-3 flex flex-col text-center  relative rounded-full h-[50px] w-[50px] items-center hover:bg-c5_20 " +
+                "p-3 flex flex-col  text-center  relative rounded-full h-[50px] w-[50px] items-center hover:bg-c5_20 " +
                 back
               }
             >

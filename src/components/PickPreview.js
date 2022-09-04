@@ -18,11 +18,11 @@ const PickPreview = ({
 
   const TeamView = ({ teamKey }) => {
     let Team = getTeamData(teamKey);
-    let background = "border-2 border-c5 bg-c5_20";
+    let background = "border-2 border-c5 bg-white";
     let text = "Loser";
     let textStyle = "text-c5";
     if (teamKey == selectedPick) {
-      background = "border-2 border-c1 bg-c1_20";
+      background = "border-2 border-c1 bg-white";
       text = "Winner";
       textStyle = "text-c1";
     }
@@ -111,7 +111,7 @@ const PickPreview = ({
               ></button>
               <div
                 id="pickMenu"
-                className="fixed w-full md:w-fit md:h-fit left-0 md:left-1/2 bg-white flex flex-col bottom-0 md:top-1/2 z-50 md:rounded-[20px] rounded-t-[20px]  p-4 md:-translate-x-1/2 md:-translate-y-1/2  pickAnimation"
+                className="fixed w-full md:w-fit md:h-fit left-0 md:left-1/2 bg-white05 flex flex-col bottom-0 md:top-1/2 z-50 md:rounded-[20px] rounded-t-[20px]  p-4 md:-translate-x-1/2 md:-translate-y-1/2  pickAnimation"
               >
                 {/* <h1 className="w-[90%] mx-auto text-3xl font-bold border-b-2 border-c1 text-c1 mb-3">
                   Your Pick

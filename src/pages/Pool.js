@@ -3,7 +3,7 @@ import InfoBox from "../components/InfoBox";
 import SliderMenu from "../components/SliderMenu";
 import WeekSelect from "../components/WeekSelect";
 import PickMenu from "../components/PickMenu";
-import LockPreview from "../components/LockPreview.js";
+
 import ProfileData from "../assets/data/ProfileData.json";
 import Lottie from "react-lottie-player";
 import lock3 from "../assets/lottie/lock3.json";
@@ -68,12 +68,8 @@ const Pool = () => {
        */}
 
       <Navbar />
-      <div className="w-[90%]  rounded-[20px] relative mx-auto mt-6 z-40 max-w-[1700px] bg-c3 mb-10 ">
-        {/* <Link to="/Home">
-          <IoIosArrowRoundBack className="absolute z-50 top-2 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
-        </Link> */}
-
-        <div className=" rounded-t-[10px]  relative mx-auto mb-2  pt-3 pb-0  bg-white02 flex flex-col items-center">
+      <div className="w-full">
+        <div className=" rounded-t-[10px]  relative mx-auto mb-2  pt-3 pb-0   flex flex-col items-center ">
           <div className="flex flex-row items-center">
             <h1 className="mx-auto mr-2 text-4xl font-bold text-white md:text-5xl w-fit whitespace-nowrap">
               {pool.Name}
@@ -88,7 +84,7 @@ const Pool = () => {
           {(() => {
             if (showDetails) {
               return (
-                <div className="top-0 z-50 flex-col justify-between w-full gap-6 p-4 mx-auto mt-3 md:flex-row bg-white05 flex-start md:items-center md:mx-auto ">
+                <div className="top-0 z-50 flex-col items-center justify-between w-full gap-6 p-4 mx-auto mt-3 md:flex-row bg-white05 flex-start md:items-center md:mx-auto ">
                   <div className="flex flex-row items-center md:flex-col w-fit">
                     <div className="flex flex-row items-center mr-2">
                       <MdOutlineAttachMoney className="w-6 h-6 p-1 mr-2 border-2 rounded-full md:w-8 md:h-8 bg-c1_20 border-c1 fill-c1" />
@@ -127,9 +123,13 @@ const Pool = () => {
             }
           })()}
         </div>
+        <div className="w-[90%]  rounded-[20px] relative mx-auto mt-6 z-40 max-w-[1700px] bg-c3 mb-10 ">
+          {/* <Link to="/Home">
+          <IoIosArrowRoundBack className="absolute z-50 top-2 md:w-20 md:h-20 h-14 w-14 fill-white hover:fill-white2" />
+        </Link> */}
 
-        <div className="flex flex-col max-w-[2000px]">
-          {/* <LockPreview
+          <div className="flex flex-col max-w-[2000px]">
+            {/* <LockPreview
             showLockAnimation={showLockAnimation}
             showMenu={showMenu}
             setShowMenu={setShowMenu}
@@ -141,23 +141,24 @@ const Pool = () => {
             setSelectedPick={setSelectedPick}
           /> */}
 
-          {/* <h1 className="mx-auto my-4 text-4xl font-bold text-white">
+            {/* <h1 className="mx-auto my-4 text-4xl font-bold text-white">
             Your Picks
           </h1> */}
-          <PickMenu
-            pool={pool}
-            setShowPickPreview={setShowPickPreview}
-            showPickPreview={showPickPreview}
-            Picks={Picks}
-            setSelectedGameKey={setSelectedGameKey}
-            selectedGameKey={selectedGameKey}
-            selectedPick={selectedPick}
-            setSelectedPick={setSelectedPick}
-            weekView={weekView}
-            setWeekView={setWeekView}
-            setShowMenu={setShowMenu}
-            setPicks={setPicks}
-          />
+            <PickMenu
+              pool={pool}
+              setShowPickPreview={setShowPickPreview}
+              showPickPreview={showPickPreview}
+              Picks={Picks}
+              setSelectedGameKey={setSelectedGameKey}
+              selectedGameKey={selectedGameKey}
+              selectedPick={selectedPick}
+              setSelectedPick={setSelectedPick}
+              weekView={weekView}
+              setWeekView={setWeekView}
+              setShowMenu={setShowMenu}
+              setPicks={setPicks}
+            />
+          </div>
         </div>
       </div>
     </div>
