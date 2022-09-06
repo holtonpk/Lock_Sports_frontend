@@ -8,7 +8,7 @@ const Hero = () => {
   const Slide1 = () => {
     return (
       <div className="md:w-full w-full sm:w-fit mx-auto flex  flex-row bg-white05 p-4 mb-0 md:mb-10 rounded-[10px]  relative  items-center">
-        <div className="flex flex-col  w-[63%] md:w-[50%] ml-3">
+        <div className="flex flex-col  w-[63%] md:w-[50%] ml-16">
           <h1 className="mb-2 text-xl text-left text-white md:text-3xl w-[70%]">
             App Coming Soon, Join the Waitlist
           </h1>

@@ -7,21 +7,17 @@ import { BiRightArrow } from "react-icons/bi";
 import { FaLock } from "react-icons/fa";
 import WeekSelect from "./WeekSelect.js";
 import PickPreview from "./PickPreview.js";
+import { MdEdit } from "react-icons/md";
 import { BiLockAlt } from "react-icons/bi";
 import { BsCalendarFill, BsFillHandIndexFill } from "react-icons/bs";
 const PickMenu = ({
+  pool,
+  Picks,
+  setSelectedPick,
   weekView,
   setWeekView,
-  setShowMenu,
-  setSelectedGameKey,
-  selectedGameKey,
   selectedPick,
-  setSelectedPick,
-  Picks,
   setPicks,
-  setShowPickPreview,
-  showPickPreview,
-  pool,
 }) => {
   let week = undefined;
   let matchUps = [];
@@ -39,22 +35,23 @@ const PickMenu = ({
 
   let date = new Date(week.FirstGameStart);
 
-  let thisWeeksPrediction = undefined;
-
-  Picks.map((week) => {
-    if (week.week == weekView) {
-      thisWeeksPrediction = week;
-    }
-  });
+  const [thisWeeksPrediction, setThisWeeksPrediction] = useState(undefined);
 
   useEffect(() => {
+    setThisWeeksPrediction(undefined);
+    Picks.map((week) => {
+      if (week.week == weekView) {
+        setThisWeeksPrediction(week);
+      }
+    });
+
     if (weekView == 1) {
       document.getElementById("weekViewMinus").classList.add("invisible");
     }
     if (weekView == nflTimeFrames.length) {
       document.getElementById("weekViewPlus").classList.add("invisible");
     }
-  });
+  }, [Picks, weekView]);
 
   const WeekSelector = (direction) => {
     if (weekView + direction <= 1) {
@@ -69,6 +66,18 @@ const PickMenu = ({
       document.getElementById("weekViewMinus").classList.remove("invisible");
     }
   };
+
+  const EditPicks = () => {
+    Picks.map((pick) => {
+      if (pick.week == weekView) {
+        Picks.pop(pick);
+      }
+      setPicks(Picks);
+    });
+
+    setThisWeeksPrediction(undefined);
+  };
+
   return (
     <>
       {(() => {
@@ -127,36 +136,44 @@ const PickMenu = ({
             </div>
             {(() => {
               if (thisWeeksPrediction) {
+                console.log("prediction", thisWeeksPrediction);
                 let Team = getTeamData(thisWeeksPrediction.selectedWinner);
                 return (
-                  <div className="flex flex-row items-center w-fit">
-                    <div className="text-base font-bold text-white sm:text-lg md:text-2xl whitespace-nowrap">
-                      Your Pick :
+                  <div className="flex flex-col items-center mb-4 md:flex-row w-fit">
+                    <div className="text-xl font-bold text-white sm:text-lg md:text-2xl whitespace-nowrap">
+                      Your Pick
                     </div>
 
                     <div
                       className={
-                        "flex flex-row items-center   px-4  rounded-[10px] w-[fit-content]  py-2  box-border  "
+                        "flex flex-row items-center   px-4  rounded-[10px] w-[fit-content]    box-border  "
                       }
                     >
                       <div className="flex flex-row mx-auto">
                         <img
                           src={Team.WikipediaLogoUrl}
                           alt="no logo"
-                          className="w-8 h-8 mr-4 md:w-14 md:h-14"
+                          className="mr-4 w-14 h-14 "
                         />
 
                         <div className="flex flex-row items-center">
-                          <h1 className="mr-1 text-base sm:text-2xl whitespace-nowrap text-c1 ">
+                          <h1 className="mr-1 text-2xl whitespace-nowrap text-c1 ">
                             {Team.City}
                           </h1>
-                          <h1 className="mr-2 text-base font-bold sm:text-2xl text-c1 ">
+                          <h1 className="mr-2 text-2xl font-bold text-c1 ">
                             {Team.Name}
                           </h1>
                           {/* <FaLock className="w-5 h-5 fill-c1" /> */}
                         </div>
                       </div>
                     </div>
+                    <button
+                      onClick={EditPicks}
+                      className="p-3 text-white bg-c5 rounded-[10px] flex flex-row items-center"
+                    >
+                      <MdEdit className="w-6 h-6 mr-2 fill-white" />
+                      Edit pick
+                    </button>
                   </div>
                 );
               } else {
@@ -192,65 +209,64 @@ const PickMenu = ({
         </div>
         <div className="w-[100%] border-t-[.5px] border-c1"></div>
         <div className="w-full px-3">
-          <div className="flex flex-col w-full mt-3 md:grid md:grid-cols-2 ">
-            {matchUps.map((matchup, i) => {
-              let gameDate = new Date(matchup.Date);
-
+          {(() => {
+            if (!thisWeeksPrediction)
               return (
-                <div
-                  key={i}
-                  className="flex flex-col w-full md:w-[90%] pb-2 mx-auto mb-2 border-b-2 border-c1"
-                >
-                  <div className="flex flex-row">
-                    <h1 className="mr-1 text-lg font-bold text-c1">
-                      {gameDate
-                        .toLocaleString("en-US", {
-                          weekday: "short",
-                        })
-                        .replace(",", "")}
-                    </h1>
-                    <h1 className="mr-2 text-lg text-c1">
-                      {(
-                        gameDate.toLocaleString("en-US", {
-                          day: "numeric",
-                          month: "numeric",
-                          hour: "numeric",
-                          minute: "numeric",
-                        }) + " ET"
-                      ).replace(",", "")}
-                    </h1>
-                    {(() => {
-                      if (!(matchup.Channel == "null")) {
-                        return (
-                          <h1 className="text-lg text-c2 ">
-                            {matchup.Channel}
+                <div className="flex flex-col w-full mt-3 md:grid md:grid-cols-2 ">
+                  {matchUps.map((matchup, i) => {
+                    let gameDate = new Date(matchup.Date);
+
+                    return (
+                      <div
+                        key={i}
+                        className="flex flex-col w-full md:w-[90%] pb-2 mx-auto mb-2 border-b-2 border-c1"
+                      >
+                        <div className="flex flex-row">
+                          <h1 className="mr-1 text-lg font-bold text-c1">
+                            {gameDate
+                              .toLocaleString("en-US", {
+                                weekday: "short",
+                              })
+                              .replace(",", "")}
                           </h1>
-                        );
-                      }
-                    })()}
-                  </div>
-                  <TeamButton
-                    setShowPickPreview={setShowPickPreview}
-                    gameKey={matchup.GameKey}
-                    teamKey={matchup.HomeTeam}
-                    selectedPick={selectedPick}
-                    setSelectedPick={setSelectedPick}
-                    setShowMenu={setShowMenu}
-                    setSelectedGameKey={setSelectedGameKey}
-                  />
-                  <TeamButton
-                    setShowPickPreview={setShowPickPreview}
-                    gameKey={matchup.GameKey}
-                    teamKey={matchup.AwayTeam}
-                    selectedPick={selectedPick}
-                    setSelectedPick={setSelectedPick}
-                    setShowMenu={setShowMenu}
-                    setSelectedGameKey={setSelectedGameKey}
-                  />
+                          <h1 className="mr-2 text-lg text-c1">
+                            {(
+                              gameDate.toLocaleString("en-US", {
+                                day: "numeric",
+                                month: "numeric",
+                                hour: "numeric",
+                                minute: "numeric",
+                              }) + " ET"
+                            ).replace(",", "")}
+                          </h1>
+                          {(() => {
+                            if (!(matchup.Channel == "null")) {
+                              return (
+                                <h1 className="text-lg text-c2 ">
+                                  {matchup.Channel}
+                                </h1>
+                              );
+                            }
+                          })()}
+                        </div>
+                        <TeamButton
+                          teamKey={matchup.HomeTeam}
+                          selectedPick={selectedPick}
+                          setSelectedPick={setSelectedPick}
+                          gameKey={matchup.GameKey}
+                        />
+                        <TeamButton
+                          teamKey={matchup.AwayTeam}
+                          selectedPick={selectedPick}
+                          setSelectedPick={setSelectedPick}
+                          gameKey={matchup.GameKey}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               );
-            })}
-          </div>
+          })()}
         </div>
       </div>
     </>

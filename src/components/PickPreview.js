@@ -3,25 +3,22 @@ import { getGameData, getTeamData } from "../logic.js";
 import Lottie from "react-lottie-player";
 import lock3 from "../assets/lottie/lock4.json";
 const PickPreview = ({
-  selectedGameKey,
   selectedPick,
-  showPickPreview,
-  setShowPickPreview,
-  Picks,
-  weekView,
-  setPicks,
   setSelectedPick,
+  setPicks,
+  weekView,
+  Picks,
 }) => {
   const [lockAnimation, showLockAnimation] = useState(false);
 
-  let Matchup = getGameData(selectedGameKey);
+  // let Matchup = undefined;
 
   const TeamView = ({ teamKey }) => {
     let Team = getTeamData(teamKey);
     let background = "border-2 border-c5 bg-white";
     let text = "Loser";
     let textStyle = "text-c5";
-    if (teamKey == selectedPick) {
+    if (teamKey == selectedPick.winner) {
       background = "border-2 border-c1 bg-white";
       text = "Winner";
       textStyle = "text-c1";
@@ -54,6 +51,7 @@ const PickPreview = ({
   };
 
   const LockPicks = () => {
+    console.log("LockPicks");
     Picks.map((pick) => {
       if (pick.week == weekView) {
         Picks.pop(pick);
@@ -62,8 +60,8 @@ const PickPreview = ({
         ...Picks,
         {
           week: weekView,
-          GameKey: selectedGameKey,
-          selectedWinner: selectedPick,
+          GameKey: selectedPick.gameKey,
+          selectedWinner: selectedPick.winner,
         },
       ]);
     });
@@ -102,11 +100,14 @@ const PickPreview = ({
         })()}
       </div>
       {(() => {
-        if (showPickPreview) {
+        if (selectedPick) {
+          let Matchup = getGameData(selectedPick.gameKey);
+
+          console.log("set%%%%%%%");
           return (
             <>
               <button
-                onClick={() => setShowPickPreview(false)}
+                onClick={() => setSelectedPick(undefined)}
                 className="fixed z-50 w-screen h-screen bg-back60 "
               ></button>
               <div
@@ -124,9 +125,8 @@ const PickPreview = ({
                   className="flex flex-row items-center w-[90%] px-4 py-2 mx-auto rounded-xl bg-c5 z-50"
                   onClick={() => {
                     LockPicks();
-                    setShowPickPreview(false);
+                    // setShowPickPreview(false);
                     LockAnimation();
-
                     setSelectedPick(undefined);
                   }}
                 >

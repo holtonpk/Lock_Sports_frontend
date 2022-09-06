@@ -2,15 +2,7 @@ import React from "react";
 import teamData2 from "../assets/data/teamData2.json";
 import { getTeamData } from "../logic.js";
 
-const TeamButton = ({
-  teamKey,
-  selectedPick,
-  setSelectedPick,
-  setShowMenu,
-  setSelectedGameKey,
-  gameKey,
-  setShowPickPreview,
-}) => {
+const TeamButton = ({ teamKey, selectedPick, setSelectedPick, gameKey }) => {
   let Team = getTeamData(teamKey);
   let styleText = "text-c1";
   let styleBg = " border-2 border-[#151515]";
@@ -26,14 +18,12 @@ const TeamButton = ({
   try {
     return (
       <button
-        onClick={() => (
-          setSelectedPick(Team.Key),
-          // setShowMenu(true),
-          setSelectedGameKey(gameKey),
-          setShowPickPreview(false),
-          setShowPickPreview(true),
-          menuSlide()
-        )}
+        onClick={() =>
+          setSelectedPick({
+            winner: teamKey,
+            gameKey: gameKey,
+          })
+        }
         className={
           "flex flex-row items-center  rounded-[10px] w-full pl-5 py-2 mb-2 box-border bg-[#151515]" +
           styleBg

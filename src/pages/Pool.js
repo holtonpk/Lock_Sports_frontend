@@ -54,12 +54,8 @@ const Pool = () => {
   }, []);
 
   return (
-    <div className="top-0 w-screen bg-black border-2 border-black homeGrid">
+    <div className="top-0 w-screen h-screen bg-black border-2 border-black homeGrid">
       <PickPreview
-        setShowPickPreview={setShowPickPreview}
-        showPickPreview={showPickPreview}
-        setShowMenu={setShowMenu}
-        selectedGameKey={selectedGameKey}
         selectedPick={selectedPick}
         setPicks={setPicks}
         weekView={weekView}
@@ -132,17 +128,11 @@ const Pool = () => {
         <div className="w-[90%]  rounded-[20px] relative mx-auto mt-6 z-40 max-w-[1700px] bg-c3 mb-10 slide-in-bottom">
           <PickMenu
             pool={pool}
-            setShowPickPreview={setShowPickPreview}
-            showPickPreview={showPickPreview}
             Picks={Picks}
-            setSelectedGameKey={setSelectedGameKey}
-            selectedGameKey={selectedGameKey}
-            selectedPick={selectedPick}
             setSelectedPick={setSelectedPick}
+            setPicks={setPicks}
             weekView={weekView}
             setWeekView={setWeekView}
-            setShowMenu={setShowMenu}
-            setPicks={setPicks}
           />
         </div>
       </div>
